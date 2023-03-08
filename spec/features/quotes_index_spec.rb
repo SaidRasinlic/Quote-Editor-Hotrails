@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'quotes/index', type: :feature do
+  fixtures :all
   before :each do
     @quote = quotes(:first) # Reference to the first fixture quote
   end
@@ -28,7 +29,7 @@ describe 'quotes/index', type: :feature do
     it "should land us on a quotes page with being able to see a quote's name" do
       visit quotes_path
       click_link @quote.name
-      assert_selector 'h1', text: @quotes.name
+      assert_selector 'h1', text: @quote.name
     end
 
     it 'updates a quote' do
