@@ -15,8 +15,9 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
 
     if @quote.save
-      redirect_to quotes_path, success: 'Quote was successfully created.'
+      redirect_to quotes_path, flash: { success: "Quote was successfully created." }
     else
+      flash[:error] = @quote.errors.full_messages.to_sentence.capitalize
       render :new
     end
   end
@@ -25,15 +26,16 @@ class QuotesController < ApplicationController
 
   def update
     if @quote.update(quote_params)
-      redirect_to quotes_path, success: 'Quote was successfully updated.'
+      redirect_to quotes_path, flash: { success: "Quote was successfully updated." }
     else
+      flash[:error] = @quote.errors.full_messages.to_sentence.capitalize
       render :edit
     end
   end
 
   def destroy
     @quote.destroy
-    redirect_to quotes_path, success: 'Quote was successfully destroyed.'
+    redirect_to quotes_path, flash: { success: "Quote was successfully destroyed." }
   end
 
   private
