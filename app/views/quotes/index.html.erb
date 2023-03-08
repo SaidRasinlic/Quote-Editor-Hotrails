@@ -1,0 +1,9 @@
+<main class="container">
+  <div class="header">
+    <h1>Quotes</h1>
+    <%= link_to "New quote",
+                new_quote_path,
+                class: "" %>
+  </div>
+  <%= render @quotes %>
+</main>
