@@ -1,9 +1,12 @@
-<main class="container">
-  <div class="header">
-    <h1>Quotes</h1>
+<main class="flex flex-col mx-auto my-4 px-2 sm:px-1 sm:max-w-[60rem]">
+  <div class="flex justify-between gap-3 mt-4 mb-6 flex-wrap sm:mb-8">
+    <h1 class="font-bold text-3xl">Quotes</h1>
     <%= link_to "New quote",
                 new_quote_path,
-                class: "" %>
+                class: "py-2 px-4 text-white bg-gradient-to-r from-[#e52d27] via-[#b31217] to-[#e52d27] bg-[length:200%_auto]
+                       hover:shadow-[0_0_20px_#eee] hover:text-white hover:bg-[right_center] focus:text-white active:text-white
+                       rounded-[10px] transition-all duration-500" %>
   </div>
-  <%= render @quotes %>
+</div>
+<%= render @quotes %>
 </main>
