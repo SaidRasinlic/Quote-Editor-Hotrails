@@ -17,8 +17,8 @@ class QuotesController < ApplicationController
     if @quote.save
       redirect_to quotes_path, flash: { success: "Quote was successfully created." }
     else
-      flash[:error] = @quote.errors.full_messages.to_sentence.capitalize
-      render :new
+      # flash[:error] = @quote.errors.full_messages.to_sentence.capitalize
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -28,8 +28,8 @@ class QuotesController < ApplicationController
     if @quote.update(quote_params)
       redirect_to quotes_path, flash: { success: "Quote was successfully updated." }
     else
-      flash[:error] = @quote.errors.full_messages.to_sentence.capitalize
-      render :edit
+      # flash[:error] = @quote.errors.full_messages.to_sentence.capitalize
+      render :edit, status: :unprocessable_entity
     end
   end
 
