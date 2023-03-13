@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# puts "\n Loading fixtures into the database will override all existing data in the tables.\n To confirm please type \"yes\""
+
+# userInput = gets.chomp
+
+# if userInput == "yes"
+puts "\n== Seeding the database with fixtures =="
+system("rails db:fixtures:load FIXTURES_DIR='../../spec/fixtures'")
+puts "\n== Done =="
+# else
+#   puts "\n Loading has been canceled. \n If you want to seed the data please try again and type \"yes\" to confirm seeding."
+# end
