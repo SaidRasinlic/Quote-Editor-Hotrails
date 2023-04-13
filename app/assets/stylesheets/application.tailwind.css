@@ -18,3 +18,7 @@ body {
   padding: 0 !important;
   font-family: 'Montserrat', sans-serif;
 }
+
+.turbo-progress-bar {
+  background: linear-gradient(to right, #d52a47, #df5134);
+}
