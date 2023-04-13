@@ -1,60 +1,60 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe "quotes/index", type: :feature do
+describe 'quotes/index', type: :feature do
   # fixtures :all
   before :each do
     @quote = Quote.ordered.first
     # @quote = quotes(:first) # Reference to the first fixture quote
   end
 
-  context "upon manipulating a new quote we" do
-    it "should be able to see a quote" do
+  context 'upon manipulating a new quote we' do
+    it 'should be able to see a quote' do
       visit quotes_path
       click_link @quote.name
 
-      assert_selector "h1", text: @quote.name
+      assert_selector 'h1', text: @quote.name
     end
 
-    it "should be able to create a new quote" do
+    it 'should be able to create a new quote' do
       visit quotes_path
-      assert_selector "h1", text: "Quotes"
+      assert_selector 'h1', text: 'Quotes'
 
-      click_on "New quote"
-      fill_in "Name", with: "Capybara quote"
-      click_on "Create quote"
+      click_on 'New quote'
+      fill_in 'Name', with: 'Capybara quote'
+      click_on 'Create quote'
 
-      assert_selector "h1", text: "Quotes"
-      assert_text "Capybara quote"
+      assert_selector 'h1', text: 'Quotes'
+      assert_text 'Capybara quote'
     end
   end
 
-  context "upon clicking or manipulating a quote it" do
+  context 'upon clicking or manipulating a quote it' do
     it "should land us on a quotes page with being able to see a quote's name" do
       visit quotes_path
       click_link @quote.name
-      assert_selector "h1", text: @quote.name
+      assert_selector 'h1', text: @quote.name
     end
 
-    it "updates a quote" do
+    it 'updates a quote' do
       visit quotes_path
-      assert_selector "h1", text: "Quotes"
+      assert_selector 'h1', text: 'Quotes'
 
-      click_on "Edit", match: :first
-      fill_in "Name", with: "Updated quote"
+      click_on 'Edit', match: :first
+      fill_in 'Name', with: 'Updated quote'
       # expect(page).to have_css("h1", text: "Quotes", wait: 5)
       # expect(page.have_field(id: "quotes")).to have_text("Quotes")
       # have_field(id: 'email', placeholder: 'Email')
-      within_frame("quotes") do
-        page.should have_content "Quotes", wait: 10
+      within_frame('quotes') do
+        page.should have_content 'Quotes', wait: 10
       end
       # assert_selector "h1", text: "Quotes", visible: false
     end
 
-    it "destroys a quote" do
+    it 'destroys a quote' do
       visit quotes_path
       assert_text @quote.name
 
-      click_on "Delete", match: :first
+      click_on 'Delete', match: :first
       assert_no_text @quote.name
     end
   end
