@@ -1,14 +1,16 @@
-<div class="flex justify-between items-center mb-5 px-4 bg-white rounded-md shadow-[1px_3px_6px_black]">
-  <%= link_to quote.name, quote_path(quote) %>
-  <div class="flex gap-1 items-center">
-    <%= button_to "Delete",
+<%= turbo_frame_tag quote do %>
+  <div class="flex justify-between items-center mb-5 px-4 bg-white rounded-md shadow-[1px_3px_6px_black]">
+    <%= link_to quote.name, quote_path(quote), data: {turbo_frame: "_top"} %>
+    <div class="flex gap-1 items-center">
+      <%= button_to "Delete",
                   quote_path(quote),
                   method: :delete,
                   class: "inline-block bg-origin-border bg-transparent border-2 font-bold cursor-pointer p-1 m-2 rounded-1.5
                          transition ease-in-out duration-500 text-black bg-[#00000021] hover:bg-[#00000066] border-black" %>
-    <%= link_to "Edit",
+      <%= link_to "Edit",
                 edit_quote_path(quote),
                 class: "inline-block bg-origin-border bg-transparent border-2 font-bold cursor-pointer p-1 m-2 rounded-1.5
                          transition ease-in-out duration-500 text-black bg-[#00000021] hover:bg-[#00000066] border-black" %>
+    </div>
   </div>
-</div>
+<% end %>
