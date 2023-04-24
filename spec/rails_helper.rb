@@ -11,7 +11,6 @@ require 'capybara/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 Capybara.default_driver = :selenium_chrome
-Capybara.default_max_wait_time = 15
 # Capybara.register_driver :chrome_timeout do |app|
 #   client = Selenium::WebDriver::Remote::Http::Default.new
 #   client.read_timeout = 100
