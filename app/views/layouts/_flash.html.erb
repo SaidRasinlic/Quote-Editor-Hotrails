@@ -1,0 +1,19 @@
+<% flash.each do |type, msg| %>
+  <div class="flash__message"
+  data-controller="removals"
+  data-action="animationend->removals#remove">
+    <% if type == "success" %>
+      <div class="min-w-0 max-w-max py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block">
+        <%= msg %>
+      </div>
+    <% elsif type == "notice" %>
+      <div class="min-w-0 max-w-max py-2 px-3 bg-yellow-50 mb-5 text-yellow-500 font-medium rounded-lg inline-block">
+        <%= msg %>
+      </div>
+    <% else %>
+      <div class="min-w-0 max-w-max py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block">
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
