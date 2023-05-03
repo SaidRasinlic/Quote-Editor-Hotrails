@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe 'quotes/index', type: :feature do
-  # fixtures :all
+  fixtures :all
   before :each do
+    login_as users(:accountant)
     @quote = Quote.ordered.first
-    # @quote = quotes(:first) # Reference to the first fixture quote
   end
 
   context 'upon manipulating a new quote we' do
@@ -44,9 +44,16 @@ describe 'quotes/index', type: :feature do
       # expect(page).to have_css("h1", text: "Quotes", wait: 5)
       # expect(page.have_field(id: "quotes")).to have_text("Quotes")
       # have_field(id: 'email', placeholder: 'Email')
-      within_frame('quotes') do
-        page.should have_content 'Quotes', wait: 10
-      end
+
+      assert_selector 'h1', text: 'Quotes'
+      click_on 'Update quote'
+
+      assert_selector 'h1', text: 'Quotes'
+      assert_text 'Updated quote'
+
+      # within_frame("quotes") do
+      #   page.should have_content "Quotes"
+      # end
       # assert_selector "h1", text: "Quotes", visible: false
     end
 
@@ -59,13 +66,3 @@ describe 'quotes/index', type: :feature do
     end
   end
 end
-
-# # expect(page).to have_selector "h1", text: "Quotes", :visible => false
-# # expect(page).to have_selector("h1", :value => "Quotes")
-# #assert_selector "h1", text: "Quotes", wait: wait_for_turbolinks, visible: false
-# expect(page).to have_selector("h1", text: "Quotes")
-
-# click_on "Update quote"
-
-# assert_selector "h1", text: "Quotes"
-# assert_text "Updated quote"

@@ -1,0 +1,14 @@
+<main class="flex flex-col justify-center items-center h-screen bg-gray-100">
+  <h1 class="font-bold text-3xl p-1">Quote editor</h1>
+  <p>A blazing fast quote editor built with Hotwire</p>
+  <% if user_signed_in? %>
+    <%= link_to "View quotes", quotes_path, 
+    class: "inline-block py-1 rounded-md bg-origin-border bg-transparent
+    border-2 border-black p-5 m-2 font-bold no-underline cursor-pointer
+    hover:shadow-[0_0_20px_#eee] hover:text-red-600 hover:bg-[right_center] focus:text-red-600 active:text-red-600
+                       rounded-[10px] transition-all duration-500" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "blue-600" %>
+  <% end %>
+</main>
+<%# outline-none transition-all duration-200 ease-in-out %>
