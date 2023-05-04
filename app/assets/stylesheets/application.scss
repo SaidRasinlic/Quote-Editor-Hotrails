@@ -5,6 +5,7 @@
 html {
   height: 100vh;
   box-sizing: border-box;
+  background-color: red !important;
 }
 
 *,
@@ -51,19 +52,8 @@ body {
   100% {
     opacity: 0;
   }
-
   5%,
   60% {
     opacity: 1;
-  }
-}
-
-.empty-state {
-  &--only-child {
-    display: none !important;
-
-    &:only-child {
-      display: revert !important;
-    }
   }
 }
