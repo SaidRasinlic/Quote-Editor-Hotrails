@@ -57,3 +57,13 @@ body {
     opacity: 1;
   }
 }
+
+.empty-state {
+  &--only-child {
+    display: none !important;
+
+    &:only-child {
+      display: revert !important;
+    }
+  }
+}
