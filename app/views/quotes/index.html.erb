@@ -4,13 +4,14 @@
     <h1 class="font-bold text-3xl">Quotes</h1>
     <%= link_to "New quote",
                 new_quote_path,
-                data: { turbo_frame: dom_id(Quote.new) },
                 class: "py-2 px-4 text-white bg-gradient-to-r from-[#e52d27] via-[#b31217] to-[#e52d27] bg-[length:200%_auto]
                        hover:shadow-[0_0_20px_#eee] hover:text-white hover:bg-[right_center] focus:text-white active:text-white
-                       rounded-[10px] transition-all duration-500" %>
+                       rounded-[10px] transition-all duration-500",
+                       data: { turbo_frame: dom_id(Quote.new) } %>
   </div>
   <%= turbo_frame_tag Quote.new %>
   <%= turbo_frame_tag "quotes" do %>
+    <%= render "quotes/empty_state" %>
     <%= render @quotes %>
   <% end %>
 </main>
