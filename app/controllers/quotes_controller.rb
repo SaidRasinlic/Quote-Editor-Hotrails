@@ -5,7 +5,9 @@ class QuotesController < ApplicationController
     @quotes = current_company.quotes.ordered
   end
 
-  def show; end
+  def show
+    @line_item_dates = @quote.line_item_dates.ordered
+  end
 
   def new
     @quote = Quote.new
@@ -16,7 +18,7 @@ class QuotesController < ApplicationController
 
     if @quote.save
       respond_to do |format|
-        format.html { redirect_to quotes_path, success: 'Quote was successfully created.' }
+        format.html { redirect_to quotes_path, flash: { success: 'Quote was successfully created.' } }
         format.turbo_stream { flash.now[:success] = 'Quote was successfully created.' }
       end
     else
@@ -29,7 +31,7 @@ class QuotesController < ApplicationController
   def update
     if @quote.update(quote_params)
       respond_to do |format|
-        format.html { redirect_to quotes_path, notice: 'Quote was successfully updated.' }
+        format.html { redirect_to quotes_path, flash: { notice: 'Quote was successfully updated.' } }
         format.turbo_stream { flash.now[:notice] = 'Quote was successfully updated.' }
       end
     else

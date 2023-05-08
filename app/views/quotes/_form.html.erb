@@ -1,4 +1,5 @@
 <%= simple_form_for quote, html: { class: "flex items-center flex-wrap align-center gap-2.5" } do |f| %>
+  <%= form_error_notification(quote) %>
   <%= f.input :name,
     wrapper_html: { class: 'flex-1' },
     label_html: { class: "sr-only" },
