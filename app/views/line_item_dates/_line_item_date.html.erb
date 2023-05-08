@@ -1,0 +1,20 @@
+<div class="p-8">
+  <div class="flex items-center justify-between gap-2">
+    <h2 class="text-xl">
+      <%= l(line_item_date.date, format: :long) %>
+    </h2>
+    <div class="flex md:text-2xl gap-2">
+      <%= button_to "Delete",
+                    [quote, line_item_date],
+                    method: :delete,
+                    class: "py-2 px-4 text-white bg-gradient-to-r from-[#e52d27] via-[#b31217] to-[#e52d27] bg-[length:200%_auto]
+                       hover:shadow-[0_0_20px_#eee] hover:text-white hover:bg-[right_center] focus:text-white active:text-white
+                       rounded-[10px] transition-all duration-500" %>
+      <%= link_to "Edit",
+                  [:edit, quote, line_item_date],
+                  class: "py-2 px-4 text-white bg-gradient-to-r from-[#e52d27] via-[#b31217] to-[#e52d27] bg-[length:200%_auto]
+                       hover:shadow-[0_0_20px_#eee] hover:text-white hover:bg-[right_center] focus:text-white active:text-white
+                       rounded-[10px] transition-all duration-500" %>
+    </div>
+  </div>
+</div>
