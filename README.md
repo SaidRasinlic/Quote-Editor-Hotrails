@@ -9,14 +9,14 @@ N/A
 
 ## Screenshot
 
-To be added...
-<!-- <p align="center"><img src="./app/assets/images/Project-Snapshot.png" alt="Project Snapshot" /> -->
+<p align="center"><img src="./app/assets/images/Project-Snapshot.png" alt="Project Snapshot" />
 
 
 ## Built With
 
-- RoR
+- Ruby on Rails
 - Hotwire
+- SASS (SCSS)
 - Tailwind CSS
 - PostgreSQL
 - Linters
@@ -42,10 +42,9 @@ To get a local copy up and running follow these simple example steps.
 - In your terminal run the following commands:
   - `bundle install`
   - `yarn install`
-  - `rails tailwindcss:build`
   - `rails db:create`
   - `rails db:migrate`
-- Run `rails s` to start your server
+- Run `foreman start -f Procfile.dev` to start your server and build the required configuration
 - Enter `http://localhost:3000/` or `localhost:3000` on your browser to run the app locally
 
 **<p align="center">Congratulations, app should run successfully 🎉!</p>**
