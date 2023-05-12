@@ -41,7 +41,7 @@
 
   // Border
   --border: solid 2px var(--color-light);
- 
+
   // Shadows
   --shadow-large: 2px 4px 20px hsl(0 0% 0% / 0.1);
   --shadow-small: 1px 3px 6px hsl(0 0% 0% / 0.1);
@@ -182,7 +182,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   background-color: var(--color-white);
-
   gap: var(--space-xs);
   margin-bottom: var(--space-s);
   padding: var(--space-xs);
@@ -214,7 +213,6 @@ body {
     align-self: flex-end;
     justify-self: flex-end;
     order: 3;
-
     font-weight: bold;
 
     @include media(tabletAndUp) {
@@ -227,6 +225,7 @@ body {
     display: none;
 
     @include media(tabletAndUp) {
+      // stylelint-disable-next-line
       display: revert;
       flex: 0 0 7rem;
     }
@@ -237,6 +236,7 @@ body {
     display: none;
 
     @include media(tabletAndUp) {
+      // stylelint-disable-next-line
       display: revert;
       flex: 0 0 9rem;
     }
