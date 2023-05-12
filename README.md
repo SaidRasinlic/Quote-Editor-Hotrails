@@ -47,6 +47,8 @@ To get a local copy up and running follow these simple example steps.
 - Run `foreman start -f Procfile.dev` to start your server and build the required configuration
 - Enter `http://localhost:3000/` or `localhost:3000` on your browser to run the app locally
 
+*OPTIONAL*: To test the app run `rails test:all`
+
 **<p align="center">Congratulations, app should run successfully 🎉!</p>**
 
 ## Author
