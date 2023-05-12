@@ -249,11 +249,11 @@ body {
     flex: 1 1 auto;
 
     @include media(tabletAndUp) {
+      // stylelint-disable-next-line
       order: revert;
       flex: 0 0 10rem;
     }
   }
-  
 
   &--form {
     box-shadow: var(--shadow-small);
@@ -272,7 +272,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
-  
+
     &__input {
       display: block;
       width: 100%;
@@ -282,11 +282,11 @@ body {
       border-radius: var(--border-radius);
       outline: none;
       transition: box-shadow 250ms;
-  
+
       &:focus {
         box-shadow: 0 0 0 2px var(--color-glint);
       }
-  
+
       &--invalid {
         border-color: var(--color-primary);
       }
@@ -304,7 +304,7 @@ body {
 
     & > * {
       font-size: var(--font-size-s);
-      font-weight: bold ;
+      font-weight: bold;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -315,7 +315,6 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-
   font-size: var(--font-size-xl);
   font-weight: bold;
   background-color: var(--color-white);
