@@ -12,6 +12,7 @@ class LineItemDatesController < ApplicationController
     if @line_item_date.save
       respond_to do |format|
         format.html { redirect_to quote_path(@quote), flash: { success: 'Date was successfully created.' } }
+        format.turbo_stream { flash.now[:success] = 'Date was successfully created.' }
       end
     else
       render :new, status: :unprocessable_entity
@@ -24,6 +25,7 @@ class LineItemDatesController < ApplicationController
     if @line_item_date.update(line_item_date_params)
       respond_to do |format|
         format.html { redirect_to quote_path(@quote), flash: { notice: 'Date was successfully updated.' } }
+        format.turbo_stream { flash.now[:notice] = 'Date was successfully updated.' }
       end
     else
       render :edit, status: :unprocessable_entity
@@ -34,6 +36,7 @@ class LineItemDatesController < ApplicationController
     @line_item_date.destroy
     respond_to do |format|
       format.html { redirect_to quote_path(@quote), flash: { alert: 'Date was successfully destroyed.' } }
+      format.turbo_stream { flash.now[:alert] = 'Date was successfully destroyed.' }
     end
   end
 

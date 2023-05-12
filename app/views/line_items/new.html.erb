@@ -1,0 +1,12 @@
+<main class="flex flex-col mx-auto my-4 px-2 sm:px-1 sm:max-w-[60rem]">
+  <%= link_to sanitize("&larr; Back to quote"), quote_path(@quote) %>
+  <div class="flex justify-between gap-3 mt-4 mb-6 flex-wrap sm:mb-8">
+    <h1>New item for <%= l(@line_item_date.date, format: :long) %></h1>
+  </div>
+  <%= turbo_frame_tag nested_dom_id(@line_item_date, LineItem.new) do %>
+    <%= render "form",
+             quote: @quote,
+             line_item_date: @line_item_date,
+             line_item: @line_item %>
+  <% end %>
+</main>
