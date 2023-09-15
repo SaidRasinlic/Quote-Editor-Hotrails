@@ -16,7 +16,7 @@ N/A
 
 - Ruby on Rails
 - Hotwire
-- SASS (SCSS)
+- SCSS
 - Tailwind CSS
 - PostgreSQL
 - Linters
